@@ -18,10 +18,14 @@ public class Vehicle
         {
             throw new IllegalArgumentException("Vehicle type can't be null.");
         }
-        this.licensPlate = licensPlate;
+        this.licensPlate = licensPlate.trim().toUpperCase();
         this.type = type;
         this.ownerName = (ownerName != null && !ownerName.trim().isEmpty()) ? ownerName.trim() : "Unknown";
         this.entryTime = LocalDateTime.now();
+    }
+    public String getLicensePlate()
+    {
+        return licensPlate;
     }
     public void setExitTime(LocalDateTime exitTime)
     {
